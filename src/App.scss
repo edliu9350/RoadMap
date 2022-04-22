@@ -1,0 +1,53 @@
+@import './theme.scss';
+
+.App {
+	padding: 60px 30px;   
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+
+	@include themify($themes) {
+		color:  themed('linkColor');
+
+		&.link-grey {
+			color:  themed('linkGreyColor');
+		}
+
+		&.link-light-grey {
+			color: themed('linkLightGreyColor');
+		}
+	
+		&.menu-item {
+			color:  themed('linkGreyColor');
+		}
+	}
+}
+
+img {
+	display: block;
+}
+
+::marker {
+	@include themify($themes) {
+		color:  themed('linkColor');
+	}
+}
+
+.theme-dark .svg-light {
+	display: none;
+}
+
+.theme-light .svg-dark {
+	display: none;
+}
+
+.theme-bar {
+	background-color: #6486b3;
+	text-align: center;
+  }
+  
+.theme-button {
+	margin: 10px !important;
+}

@@ -1,0 +1,78 @@
+@import '../../theme.scss';
+
+.header {
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media (max-width: 768px) {
+	.header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+	}
+}
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.lang-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.lang-select {
+	@include themify($themes) {
+		color: themed('selectColor');
+		background-color: themed('selectBackWhiteColor');
+		background: themed('down_arrowSvg') no-repeat;
+	}
+	font-weight: 700;
+	border: none;
+	font-size: 16px;
+	font-family: Libre Franklin;
+	line-height: 20px;
+	padding: 2px 18px 2px 2px;
+	appearance: none;
+	background-position: right !important;
+}
+
+.lang-select:focus {
+	outline: none;
+}
+
+.platform-select {
+	outline: none;
+}
+
+.lang-title {
+	margin-right: 6px;
+}
+
+.menu-wrapper {
+	display: flex;
+	gap: 20px;
+}
+
+.down-arrow {
+	width: 12px;
+	height: 7px;
+}
+
+.v-divider {
+	height: 19px;
+	@include themify($themes) {
+		border-left:  1px solid themed('dividerColor');
+	}
+}
+
+.lang-title {
+	font-family: Libre Franklin;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19px;
+}

@@ -1,0 +1,7 @@
+@import '../../theme.scss';
+
+.main-container {
+    @include themify($themes) {
+        background-color: themed("backColor");
+    }
+}

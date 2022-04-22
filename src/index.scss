@@ -1,0 +1,23 @@
+@import './theme.scss';
+
+@font-face {
+	font-family: Libre Franklin;
+	src: url(../public/assets/LibreFranklin-Regular.ttf);
+}
+
+@font-face {
+	font-family: Inter;
+	src: url(../public/assets/Inter-Regular.ttf);	
+}
+
+body {
+	margin: 0;
+	padding: 0px 222px;	
+	font-family: Inter;
+}
+
+@media (max-width: 768px) {
+	body {
+		padding: 0px;	
+	}
+}

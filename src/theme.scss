@@ -1,0 +1,50 @@
+$themes: (
+	light: (
+		linkColor: #34b3f1,
+        linkGreyColor: #5f5f5f,
+        linkLightGreyColor: #afafaf,
+        titleColor: #202020,
+        selectColor: #1d2022,
+        selectBackColor: #f2f2f2,
+        selectBackWhiteColor: white,
+        dividerColor: #afafaf,
+        alertColor: #9f7bea,
+        backColor: white,
+        down_arrowSvg: url("../public/assets/down_arrow-light.svg")
+	),
+	dark: (
+        linkColor: #389dce,
+        linkGreyColor: #afafaf,
+        linkLightGreyColor: #5f5f5f,
+        titleColor: #d3d3d3,
+        selectColor: #eff1f2,
+        selectBackColor: #1a1a1a,
+        selectBackWhiteColor: black,
+        dividerColor: #5f5f5f,
+        alertColor: #9f7bea,
+        backColor: black,
+        down_arrowSvg: url("../public/assets/down_arrow-dark.svg")
+	)
+);
+
+@mixin themify($themes: $themes) {
+    @each $theme,
+    $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
