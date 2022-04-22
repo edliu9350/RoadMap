@@ -17,7 +17,7 @@ export default () => {
                 <div className="lang-wrapper">
                     <select className="lang-select">
                         <option>EN</option>
-                        <option>CN</option>
+                        <option>PL</option>
                     </select>
                 </div>
                 <span className="v-divider"></span>
